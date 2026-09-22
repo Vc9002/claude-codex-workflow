@@ -1,0 +1,3 @@
+display_name: Browse Claude History
+short_description: Recover Claude sessions and files.
+default_prompt: Find the latest relevant Claude session notes and documents, then summarize what matters.

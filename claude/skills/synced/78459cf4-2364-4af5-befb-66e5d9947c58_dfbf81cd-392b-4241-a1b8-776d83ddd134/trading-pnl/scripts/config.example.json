@@ -1,0 +1,10 @@
+{
+  "kalshi_key_id": "YOUR_KALSHI_KEY_ID",
+  "kalshi_key_file": "kalshi-private-key.pem",
+  "kalshi_credit_usd": 44.68,
+  "claude_cost_usd": 45,
+  "pickbook_per_week": 15,
+  "pickbook_start": "2026-06-11",
+  "polymarket_sdk_dir": "../Polymarket-US-App/bot",
+  "output_xlsx": "../Trading P&L Statement (auto).xlsx"
+}

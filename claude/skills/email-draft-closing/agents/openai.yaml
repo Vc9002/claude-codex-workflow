@@ -1,0 +1,4 @@
+interface:
+  display_name: "Email Draft Closing"
+  short_description: "Omit manual signatures from Vincent's email drafts"
+  default_prompt: "Draft or revise this email using Vincent's configured closing and signature preference."

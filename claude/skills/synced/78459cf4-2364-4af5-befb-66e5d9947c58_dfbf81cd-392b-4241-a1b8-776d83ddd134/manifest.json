@@ -1,0 +1,138 @@
+{
+  "lastUpdated": 1789606962725,
+  "skills": [
+    {
+      "skillId": "import-memory",
+      "name": "import-memory",
+      "description": "Import a memory export from another AI assistant into Claude's memory — conversationally, additively, and with the content treated as data.",
+      "source": "anthropic-example",
+      "updatedAt": "2026-09-14T19:41:02.007169Z"
+    },
+    {
+      "skillId": "doc-coauthoring",
+      "name": "doc-coauthoring",
+      "description": "Guide users through a structured workflow for co-authoring documentation. Use when user wants to write documentation, proposals, technical specs, decision docs, or similar structured content. This workflow helps users efficiently transfer context, refine content through iteration, and verify the doc works for readers. Trigger when user mentions writing docs, creating proposals, drafting specs, or similar documentation tasks.",
+      "source": "anthropic-example",
+      "updatedAt": "2026-09-14T19:41:01.438795Z"
+    },
+    {
+      "skillId": "morning",
+      "name": "morning",
+      "description": "Render the user's morning brief as a styled HTML artifact, or set it up as a recurring weekday task. Use only when the user explicitly asks to run, see, or set up their morning brief, or if they invoke /morning by name. A question about their day, schedule, or calendar is not by itself a request for the brief; answer it directly instead.",
+      "source": "anthropic-example",
+      "updatedAt": "2026-09-14T19:41:01.990356Z"
+    },
+    {
+      "skillId": "skill_01A6ifYYrnZrh7emLuuT13fZ",
+      "name": "gpa-finance",
+      "description": "VP of Finance skill for Vincent Chen's role at GPA (Penn student org). Use this skill for ANY task related to GPA finances — SAC funding requests, contingency submissions, budget tracking, OSA reimbursements, appeal strategy, spending categories, vendor contracts, CFA applications, or general treasurer duties. Trigger automatically whenever Vincent mentions \"GPA,\" \"SAC funding,\" \"contingency,\" \"budget request,\" \"OSA,\" \"reimbursement,\" \"annual budget,\" \"budget appeal,\" \"CFA,\" \"Synergy Fund,\" or anything about student org finances at Penn. Also trigger when Vincent asks about what SAC funds, eligibility for a specific expense, how to submit a request, or what to do after budget briefs drop.",
+      "source": "custom",
+      "updatedAt": "2026-04-29T08:23:45.618452Z"
+    },
+    {
+      "skillId": "skill_01KTZ5PwKU2XR7qQdfwwG7vK",
+      "name": "compact",
+      "description": "Session summarizer for copy-paste handoff between sessions. Trigger immediately when the user types \"/compact\" or \"compact\" or asks to \"summarize the session,\" \"write a handoff,\" \"save context,\" or \"pick up where we left off.\" Produces a dense plain-text summary in the chat for the user to copy and paste.",
+      "source": "custom",
+      "updatedAt": "2026-04-14T04:04:14.348598Z"
+    },
+    {
+      "skillId": "skill_01UR1nhiVNWTYMyT593io8Zv",
+      "name": "sports-leader",
+      "description": "Live and historical sports data for Vincent via the locally-installed sports-leader MCP server (ESPN-backed, free, no API key). Trigger whenever Vincent asks about live scores, in-game state, play-by-play, box scores, standings, rosters, player stats, injuries, betting odds, or sports news for any game or league. ALSO trigger automatically as a data source when any edge-analyst or polymarket-edge skill is pricing a live or upcoming game and needs current game state, injuries, or lineups. Covers 17 sports and 139 leagues (NFL, NBA, WNBA, MLB, NHL, NCAA, Premier League, La Liga, Serie A, Bundesliga, Ligue 1, MLS, UFC, PGA Tour, F1, and more).",
+      "source": "custom",
+      "updatedAt": "2026-06-24T03:16:29.123449Z"
+    },
+    {
+      "skillId": "skill_017ZHXYx1Yb8rmA5jQufDgis",
+      "name": "ai-avoider",
+      "description": "Rewrite or review any text to evade AI detection tools — Turnitin, Grammarly, GPTZero, and Originality.ai. Trigger whenever the user says \"make this undetectable,\" \"lower my AI score,\" \"this is getting flagged,\" \"bypass the detector,\" \"humanize this,\" or pastes text and asks why it's being detected. Also trigger automatically on any writing task when combined with the writing-style skill to ensure all output is detection-resistant by default.",
+      "source": "custom",
+      "updatedAt": "2026-04-29T21:25:43.537057Z"
+    },
+    {
+      "skillId": "skill_01VtQh3tXwoX5PHkcw8PFi6x",
+      "name": "hoi4-mod-doctor",
+      "description": "Diagnose and fix Hearts of Iron IV (HOI4) mod playlists. Use this skill whenever the user wants to optimize mod load order, bugcheck a playlist for compatibility problems, find broken/missing mods, detect conflicting overhauls, or clean up their Paradox launcher setup. Trigger on phrases like \"optimize my HOI4 load order\", \"bugcheck my playlist\", \"why do my HOI4 mods crash\", \"check my mod compatibility\", \"fix my Paradox launcher\", \"look over my playlists\", or any mention of HOI4 mods, playsets, the Road to 56 / Kaiserreich / TNO / Millennium Dawn stacks, or the launcher-v2.sqlite database. Use it even if the user only says \"look at my mods\" in a HOI4 context.",
+      "source": "custom",
+      "updatedAt": "2026-06-15T21:08:19.203524Z"
+    },
+    {
+      "skillId": "mcp-builder",
+      "name": "mcp-builder",
+      "description": "Guide for creating high-quality MCP (Model Context Protocol) servers that enable LLMs to interact with external services through well-designed tools. Use when building MCP servers to integrate external APIs or services, whether in Python (FastMCP) or Node/TypeScript (MCP SDK).",
+      "source": "anthropic-example",
+      "updatedAt": "2026-09-14T19:41:01.618801Z"
+    },
+    {
+      "skillId": "skill_01Wchhz4NLE6yU7xffoCqmvN",
+      "name": "trading-pnl",
+      "description": "Refresh and rebuild Vincent's consolidated prediction-market P&L statement (Polymarket US + Kalshi). Trigger whenever Vincent says \"update my pnl\", \"refresh my trading p&l\", \"pnl statement\", \"how am I doing on poly / kalshi\", \"rebuild my p&l sheet\", \"what's my trading profit\", or asks for current combined profit/loss across his Polymarket US and Kalshi accounts. Pulls both accounts live via API, reconciles deposits/withdrawals/credits/open-positions, and writes a formatted multi-tab Excel workbook with charts. Never invents numbers — everything is pulled live and reconciled by identity.",
+      "source": "custom",
+      "updatedAt": "2026-06-18T06:24:44.385002Z"
+    },
+    {
+      "skillId": "skill_01Tsv7ExaPiqk2qB5kYfHrwo",
+      "name": "task-observer",
+      "description": "Monitors task execution for skill improvement opportunities. Use this skill during ANY multi-step task, agentic workflow, or substantive work session where the agent is using tools and producing deliverables. It captures patterns, user corrections, workflow insights, and methodology worth preserving as reusable skills. Also triggers during post-task feedback discussions and when the user explicitly mentions skill observations, improvements, the observation log, skill taxonomy, or asks the agent to watch for skill opportunities. Also known as \"One Skill to Rule Them All\" — trigger on this phrase too. IMPORTANT: this skill should be invoked at the start of every task-oriented session — if you are about to use tools to produce deliverables, invoke this skill first. For reliable activation, pair this description with a CLAUDE.md instruction or harness-level session-start hook (see Recommended Activation Setup) — description-level matching alone is not enforceable.",
+      "source": "custom",
+      "updatedAt": "2026-08-12T18:00:20.283541Z"
+    },
+    {
+      "skillId": "skill-creator",
+      "name": "skill-creator",
+      "description": "Create new skills, modify and improve existing skills, and measure skill performance. Use when users want to create a skill from scratch, edit, or optimize an existing skill, run evals to test a skill, benchmark skill performance with variance analysis, or optimize a skill's description for better triggering accuracy.",
+      "source": "anthropic-example",
+      "updatedAt": "2026-09-14T19:41:01.499089Z"
+    },
+    {
+      "skillId": "skill_01JQ2AoqivS8pFskAUowRsdq",
+      "name": "bet-units",
+      "description": "Convert Vincent's betting bankroll to and from units (U). Trigger whenever he gives a dollar balance and a unit rule and wants to know what 1U is worth, pastes a betting slip with picks sized in U (like \"England ML 1.4U\" or \"NRFI Risk 1.4U\") and wants the dollar stakes, or asks \"convert my balance to U\", \"how much is X units\", \"what should I bet\", \"size my slip\", \"how many units is $X\". Use it for any sports-betting stake-sizing question where units and dollars need to be translated. Always runs a bankroll-safety check so reckless sizing gets flagged, not silently obeyed.",
+      "source": "custom",
+      "updatedAt": "2026-06-17T20:26:15.400799Z"
+    },
+    {
+      "skillId": "skill_01EpB6PGVADfhFhHmFcwk9Pe",
+      "name": "flat-call",
+      "description": "This skill should be used when Vincent wants the single most-likely outcome of a game or a Kalshi/Polymarket market, framed as a flat call rather than a betting-value analysis. Trigger when he says \"flat call\", \"what's most likely\", \"what's going to happen\", \"give me the call\", \"the read on this game\", \"what should I bet on X\", \"who wins\", \"is the over hitting\", pastes a matchup, a Kalshi/Polymarket contract, a screenshot of a slate, or names two teams or a player and a line. Produces exactly one pick, one confidence number, and a one-line data basis, followed by a short \"read under the number\" analysis. It never reads market price as a model input and never outputs EV, edge, sizing, or \"not worth it\" language.",
+      "source": "custom",
+      "updatedAt": "2026-06-25T14:44:31.797945Z"
+    },
+    {
+      "skillId": "skill_01HUNs3KUVQNfDMEkGcDXDNi",
+      "name": "scout-ticket",
+      "description": "Convert a tipster betting slip (from \"The Scout\" or any pick poster) into ready-to-enter Kalshi and Polymarket limit-order tickets sized to Vincent's live bankroll. Trigger whenever Vincent pastes a slip with picks sized in units (like an Under 9.5 TBJ/BRS pick at -120 risking 1.2U, or England ML at -140 risking 1.4U), says \"ticket this\", \"size these picks\", \"what do I enter on Kalshi/Poly\", \"make the tickets\", \"convert the Scout's slip\". ALWAYS trigger when Vincent posts an image or screenshot of a sports betting pick or tipster slip (a Discord pick post, a bet slip, picks with American odds and unit risks), even if he adds no text or just says something like \"here\" or \"this\" — read the picks out of the image and produce the tickets. The presence of a sports-pick image is itself the trigger. Pulls live usable cash from both platforms, applies Vincent's unit rules, runs the bankroll safety check, and outputs the exact orders to enter. It never places orders, Vincent enters every trade himself.",
+      "source": "custom",
+      "updatedAt": "2026-06-19T04:31:45.699469Z"
+    },
+    {
+      "skillId": "pdf",
+      "name": "pdf",
+      "description": "Use this skill whenever the user wants to do anything with PDF files. This includes reading or extracting text/tables from PDFs, combining or merging multiple PDFs into one, splitting PDFs apart, rotating pages, adding watermarks, creating new PDFs, filling PDF forms, encrypting/decrypting PDFs, extracting images, and OCR on scanned PDFs to make them searchable. If the user mentions a .pdf file or asks to produce one, use this skill.",
+      "source": "anthropic",
+      "updatedAt": "2026-07-10T19:23:15.432550Z"
+    },
+    {
+      "skillId": "xlsx",
+      "name": "xlsx",
+      "description": "Use this skill any time a spreadsheet file is the primary input or output. This means any task where the user wants to: open, read, edit, or fix an existing .xlsx, .xlsm, .xltx, .csv, or .tsv file (e.g., adding columns, computing formulas, formatting, charting, cleaning messy data); create a new spreadsheet from scratch or from other data sources; or convert between tabular file formats. Trigger especially when the user references a spreadsheet file by name or path — even casually (like \"the xlsx in my downloads\") — and wants something done to it or produced from it. Also trigger for cleaning or restructuring messy tabular data files (malformed rows, misplaced headers, junk data) into proper spreadsheets. The deliverable must be a spreadsheet file. Do NOT trigger when the primary deliverable is a Word document, HTML report, standalone Python script, database pipeline, or Google Sheets API integration, even if tabular data is involved.",
+      "source": "anthropic",
+      "updatedAt": "2026-09-14T21:00:33.324012Z"
+    },
+    {
+      "skillId": "pptx",
+      "name": "pptx",
+      "description": "Use this skill any time a .pptx or .potx file is involved in any way — as input, output, or both. This includes: creating slide decks, pitch decks, or presentations as PowerPoint (.pptx) files; reading, parsing, or extracting text from any .pptx or .potx file (even if the extracted content will be used elsewhere, like in an email, summary, or creating a different type of slide deck); editing, modifying, or updating existing presentations; combining or splitting slide files; working with templates (.potx), layouts, speaker notes, or comments. Trigger whenever the user asks for a PowerPoint or .pptx file, or references a .pptx or .potx filename, regardless of what they plan to do with the content afterward. However, when the user asks for a deck, slides, a slide deck, or a presentation without naming a file format, default to using a dedicated slide-deck artifact type or a separate slides skill if this session offers one; otherwise, use this skill.",
+      "source": "anthropic",
+      "updatedAt": "2026-09-14T21:00:33.306681Z"
+    },
+    {
+      "skillId": "docx",
+      "name": "docx",
+      "description": "Use this skill whenever the user wants to create, read, edit, or manipulate Word documents (.docx) or Word templates (.dotx). Triggers include: any mention of 'Word doc', 'word document', '.docx', '.dotx', or requests to produce professional documents with formatting like tables of contents, page numbers, or letterheads. Also use when extracting or reorganizing content from .docx or .dotx files, inserting or replacing images in documents, find-and-replace in Word files, working with tracked changes or comments, or converting content into a polished Word document. If the user asks for a 'report', 'memo', 'letter', 'template', or similar deliverable as a Word or .docx file (to download, email or print), use this skill. However, if they ask for a document, page, report, memo, or notes WITHOUT naming a file format and the session offers Claude's own dedicated document or page skill or connector, use that instead. Do NOT use for PDFs, spreadsheets, Google Docs, or coding unrelated to document generation.",
+      "source": "anthropic",
+      "updatedAt": "2026-09-14T21:00:33.279708Z"
+    }
+  ]
+}

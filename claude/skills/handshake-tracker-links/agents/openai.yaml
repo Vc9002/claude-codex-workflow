@@ -1,0 +1,3 @@
+display_name: Handshake Tracker Links
+short_description: Extract Handshake raw URLs for tracker rows.
+default_prompt: Use this skill to add or update Tracker MCP applications from Handshake Jobs HTML, preferring visible Raw URL lines or embedded job data for canonical links.
