@@ -1,1 +1,208 @@
-# Complete Workflow Inventory\n\nThis document details everything captured for reproducibility on a new machine.\n\n## What's Included (Portable)\n\n### Claude Code (`claude/`)\n\n**Skills** (`claude/skills/`) — 100+ reusable workflow automations\n- GSD framework (phase orchestration, code review, debugging, execution)\n- Subject-domain skills (Python patterns, security audit, data viz)\n- Tool-specific (MCP builders, PDF/DOCX/PPTX handlers, Notion/Todoist integration)\n- Project workflows (task-timer, claude-selfmem, Penn academic)\n\n**Agents** (`claude/agents/`) — Subagent definitions for parallel work\n- gsd-* agents (plan-phase, code-fixer, domain-researcher, etc.)\n- general-purpose, Explore, Plan agents\n- Specialized: eval-planner, pattern-mapper, security-auditor, UI-researcher\n\n**Commands** (`claude/commands/`) — Slash commands and workflows\n- `/gsd-*` orchestrators (GSD methodology commands)\n- Shortcuts and task runners\n\n**Hooks** (`claude/hooks/`) — Local lifecycle automation\n- Input guards: shell injection scanner, Bash command blocker, read-path guard\n- Pre-write guards: unsafe redirect detector, Windsurf code safety checks\n- Output guards: injection scanner, sensitive data redaction\n- Session hooks: startup/shutdown tasks\n\n**Plugins** (`claude/plugins/`) — Installed MCP servers and marketplace configs\n- `known_marketplaces.json` — plugin registry sources\n- `installed_plugins.json` — which plugins are active + their install paths\n\n**Configuration Files** (examples provided)\n- `claude/settings.json.example` — editor settings, env vars, permission allowlists, hooks registry\n- `claude/CLAUDE.md.example` — global per-project instructions\n\n### Codex CLI (`codex/`)\n\n**Skills** (`codex/skills/`) — Same as Claude, mirrored\n- Identical skill set as Claude Code\n\n**Configuration** (examples provided)\n- `codex/config.toml.example` — API keys, model selection, workspace settings, MCP servers\n- `codex/AGENTS.md.example` — global instructions file\n\n## What's NOT Included (Machine-Specific)\n\n### Secrets & Auth\n- API keys (Anthropic, OpenAI, Linear, MCP server credentials)\n- OAuth tokens (GitHub, Google, Notion, Slack, etc.)\n- GitHub CLI auth (from `~/.config/gh/hosts.yml`)\n- MCP server credentials (database URLs, API keys)\n- SSH keys\n\n### Session State & Caches\n- `~/.claude/.claude.json` — session bookkeeping, auth state\n- `~/.claude/daemon/` — running daemon logs and state\n- File history and command history\n- `~/.claude/chrome/` — browser automation session data\n- Chat caches and temporary files\n\n### Project-Specific State\n- Project-level `.claude/settings.local.json` — local permission overrides, dev env vars\n- `.gsd-phase` files in project roots (current phase state)\n- `.claude/projects/*/` — per-project session logs and artifacts\n\n### Large/Redundant Files\n- Skill `node_modules/`, `.venv/`, compiled outputs\n- Changelog and version histories within skills\n\n## Setup on New Machine\n\n### Quick Start (30 seconds)\n\n```bash\ngit clone https://github.com/Vc9002/claude-codex-workflow.git\ncd claude-codex-workflow\nbash install.sh\n```\n\n### Detailed Setup\n\nSee [SETUP.md](SETUP.md). Key steps:\n\n1. **Install prerequisites**: Claude Code, Codex CLI\n2. **Clone this repo** and run `install.sh`\n3. **Add secrets** to machine's actual config files (not tracked):\n   - Claude: edit `~/.claude/settings.json` and `~/.claude/settings.local.json` with actual API keys\n   - Codex: edit `~/.codex/config.toml` with actual API keys and MCP server URLs\n   - GitHub CLI: `gh auth login` to authenticate\n4. **Verify**: `claude --version && codex --version`\n\n### Optional: Project-Level Customization\n\nIn any project git root, create `.claude/CLAUDE.md` to override global instructions. The workflow includes examples in each tool's `.example` files.\n\n## File Structure Reference\n\n```\n.\n├── README.md                              # Overview\n├── SETUP.md                               # New-machine instructions\n├── INVENTORY.md                           # This file\n├── install.sh                             # Automated installer\n│\n├── claude/\n│   ├── CLAUDE.md.example                  # Global instructions template\n│   ├── settings.json.example              # Claude Code settings template\n│   ├── commands/                          # Slash commands and CLI helpers\n│   ├── hooks/                             # Lifecycle automation scripts\n│   ├── plugins/                           # MCP server configs\n│   │   ├── known_marketplaces.json        # Plugin registry definitions\n│   │   └── installed_plugins.json         # Active plugins + paths\n│   ├── skills/                            # 100+ workflow skills\n│   │   ├── gsd-*/                         # GSD phase orchestrators\n│   │   ├── *-patterns/                    # Subject-domain workflows\n│   │   ├── tool-specific/                 # PDF, Todoist, MCP, etc.\n│   │   └── project-specific/              # task-timer, claude-mem, Penn courses\n│   └── agents/                            # Subagent definitions\n│\n├── codex/\n│   ├── AGENTS.md.example                  # Global instructions template\n│   ├── config.toml.example                # Codex config template\n│   └── skills/                            # Mirror of Claude skills\n```\n\n## Key Notes for Reproduction\n\n- **All file paths use `$HOME`** in example configs — no hardcoded `/Users/vincentc9002/` paths\n- **Hooks are Bash/Node** — fully portable, no binary dependencies\n- **Skills are self-contained** — each one is a folder with docs, prompts, and tool definitions\n- **No submodules or external deps** — everything needed is in the repo\n- **Plugin manifests** — the repo records *which* plugins were installed and where to find them, but plugins themselves come from the marketplace on install\n\n## Sync to Multiple Machines\n\n```bash\n# On machine A (existing setup):\ncd /path/to/claude-codex-workflow\ngit pull origin main\n\n# Make changes to skills, commands, hooks\ngit add .\ngit commit -m \"Update X skill\"\ngit push\n\n# On machine B (new setup):\ncd /path/to/claude-codex-workflow\ngit pull\nbash install.sh  # idempotent, only updates changed files\n```\n\nThe install script is safe to re-run and will skip files that haven't changed.\n"
+# Workflow Inventory — What's Included & Why
+
+## ✅ Included (Portable, Workflow-Critical)
+
+### Claude Code (`~/.claude/`)
+
+**Skills** (`claude/skills/`)
+- All 170+ user-defined and installed skills
+- Each skill is self-contained (has its own `SKILL.md`, assets, dependencies)
+- These define your workflow methodology and automation patterns
+- Safe to commit: no secrets, no user-specific state
+
+**Subagents** (`claude/agents/`)
+- All custom agents used for parallel research, code review, etc.
+- Defines how you delegate parallel work
+- Safe to commit: pure definitions, no runtime state
+
+**Slash Commands** (`claude/commands/`)
+- Custom commands (e.g., `/gsd-plan-phase`, `/gsd-execute`)
+- Extends the Claude Code command palette
+- Safe to commit: configuration, no secrets
+
+**Hooks** (`claude/hooks/`)
+- Bash/JS hooks that run on file read, write, commit, etc.
+- Includes safety gates, injection scanners, pre-write guards
+- Safe to commit: logic only, no state or secrets
+
+**Plugin Definitions** (`claude/plugins/`)
+- MCP marketplace registries and plugin metadata
+- Does NOT include auth tokens (those stay in `~/.claude.json`, excluded)
+- Safe to commit: discovery metadata only
+
+**Global Instructions** (`claude/CLAUDE.md`)
+- Your personal project instructions and rules
+- Defines how you work with Claude Code
+- Safe to commit: methodology, no secrets
+
+**Settings Template** (`claude/settings.json.example`)
+- Your configuration (env vars, permission allowlists, hook triggers)
+- With all `/Users/vincentc9002` paths replaced with `$HOME`
+- You'll review & apply this selectively on the new machine
+- Marked `.example` so it won't overwrite local customizations
+
+### Codex CLI (`~/.codex/`)
+
+**Skills** (`codex/skills/`)
+- Shared with Claude (symlinked/synced)
+- Portable, methodology-driven
+
+**Global Instructions** (`codex/AGENTS.md`)
+- Codex equivalent of `CLAUDE.md`
+- Defines Codex-specific automation
+
+**Config Template** (`codex/config.toml.example`)
+- Codex configuration with `$HOME` placeholders
+- Marked `.example` for safe merging
+
+### Setup Automation
+
+**`install.sh`**
+- Bash script that symlinks all skills, agents, commands, hooks into the right places
+- Idempotent — safe to re-run
+- Respects existing customizations
+
+**`SETUP.md`**
+- Step-by-step guide for new machines
+- Covers prerequisites, installation, verification, customization
+
+---
+
+## ❌ Excluded (Not Portable, Secrets, or State)
+
+### Why These Aren't Included
+
+**`~/.claude.json`** (auth tokens, model preferences)
+- Contains Anthropic API keys and user account settings
+- Per-machine (user is logged in as their account, not yours)
+- Regenerated on first Claude Code login
+
+**`~/.claude/daemon/`** (daemon socket, logs, state)
+- Runtime state — not reproducible, not portable
+- Regenerated when you launch Claude Code
+
+**`~/.claude/file-history/`** (session transcript cache)
+- Large, per-machine, ephemeral
+- Not needed to restore workflow
+
+**`~/.claude/chrome/`** (headless browser cache)
+- Generated by tool runtime
+- Recreated as needed
+
+**`~/.claude/*-backup.json`, `*-state.json`**
+- Daemon snapshots, temporary state
+- Stale after each session
+
+**`~/.claude/debug/`** (error logs, crash dumps)
+- Not needed for workflow reproduction
+
+**`~/.codex/auth.json`** (Codex auth token)
+- Per-machine, secret — regenerated on `codex login`
+
+**`~/.codex/.tmp/`, session archives**
+- Ephemeral runtime files
+- Not needed
+
+**`~/.codex/.codex-global-state.json*`** (daemon checkpoints)
+- Runtime state, not portable
+
+---
+
+## 🔄 How to Use This Repo
+
+### On a new machine:
+
+1. **Clone:**
+   ```bash
+   git clone https://github.com/Vc9002/claude-codex-workflow.git
+   cd claude-codex-workflow
+   ```
+
+2. **Install:**
+   ```bash
+   ./install.sh
+   ```
+   This symlinks all skills, agents, commands, hooks into `~/.claude` and `~/.codex`.
+
+3. **Review & apply settings:**
+   - Check `claude/settings.json.example` for environment variables and permission allowlists
+   - Merge relevant lines into `~/.claude/settings.json` (or `settings.local.json` for machine-specific overrides)
+   - Same for `codex/config.toml.example` → `~/.codex/config.toml`
+
+4. **Login:**
+   ```bash
+   claude login     # Sign into Anthropic account (generates ~/.claude.json)
+   codex login     # Sign into OpenAI account (generates ~/.codex/auth.json)
+   ```
+
+5. **Verify:**
+   ```bash
+   claude --version
+   codex --version
+   ```
+
+The workflow is now fully portable and reproduced on the new machine.
+
+---
+
+## 📋 Customization Points
+
+These settings are in the `.example` files — customize them per machine as needed:
+
+- **Env vars** (`ANTHROPIC_BASE_URL`, `ENABLE_TOOL_SEARCH`, etc.)
+- **Permission allowlists** (which tools are auto-approved; you can expand/restrict per machine)
+- **Hook triggers** (which events fire which guards/automation)
+- **Plugin marketplaces** (which plugin sources to use)
+
+See `SETUP.md` for the full customization walkthrough.
+
+---
+
+## 🔐 Security Checklist
+
+- ✅ No API keys in the repo
+- ✅ No auth tokens
+- ✅ No personal data (email, domain names, real file paths)
+- ✅ All user-specific paths replaced with `$HOME`
+- ✅ Safe to make this repo public
+
+---
+
+## 📊 What's in the Repo
+
+```
+.
+├── README.md                      # Overview
+├── SETUP.md                       # Setup guide for new machines
+├── INVENTORY.md                   # This file
+├── install.sh                     # Installation script (symlinks everything)
+│
+├── claude/
+│   ├── CLAUDE.md                  # Global instructions
+│   ├── settings.json.example      # Settings template (with $HOME placeholders)
+│   ├── skills/                    # 170+ skills
+│   ├── agents/                    # Custom subagents
+│   ├── commands/                  # Slash commands
+│   ├── hooks/                     # Pre/post-write guards, injection scanners
+│   └── plugins/                   # MCP plugin metadata (no auth tokens)
+│
+└── codex/
+    ├── AGENTS.md                  # Codex global instructions
+    ├── config.toml.example        # Config template (with $HOME placeholders)
+    └── skills/                    # Shared with Claude
+```
+
+**Total size:** ~25 MB (all portable, no binaries, no caches)
+
+---
+
+## 🎯 What Happens When You Install
+
+The `install.sh` script does this atomically for each skill/agent/command/hook:
+
+1. Check if the target exists in `~/.claude` or `~/.codex`
+2. If it doesn't exist, symlink from the repo
+3. If it exists locally, ask you (interactive mode) or skip (CI mode)
+4. Verify all symlinks after install
+
+Result: Your new machine has the exact same skills, agents, commands, and methodology as the source machine — without overwriting any local customizations.
