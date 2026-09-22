@@ -1,0 +1,63 @@
+{
+  "version": 2,
+  "plugins": {
+    "frontend-design@claude-plugins-official": [
+      {
+        "scope": "user",
+        "installPath": "/Users/vincentc9002/.claude/plugins/cache/claude-plugins-official/frontend-design/c447c3207a42",
+        "version": "c447c3207a42",
+        "installedAt": "2026-07-24T14:57:39.490Z",
+        "lastUpdated": "2026-09-18T23:25:39.408Z",
+        "gitCommitSha": "c447c3207a425bc4e2a0d068435f64b0477ae981"
+      }
+    ],
+    "claude-mem@thedotmack": [
+      {
+        "scope": "user",
+        "installPath": "/Users/vincentc9002/.claude/plugins/cache/thedotmack/claude-mem/13.25.3",
+        "version": "13.25.3",
+        "installedAt": "2026-08-25T02:56:18.295Z",
+        "lastUpdated": "2026-09-22T00:22:22.151Z",
+        "gitCommitSha": "4520de9e0f8d6cdc20597520e383d8b51d93137f"
+      }
+    ],
+    "headroom@headroom-marketplace": [
+      {
+        "scope": "local",
+        "projectPath": "/Users/vincentc9002/.claude/plugins/cache/thedotmack/claude-mem/13.15.0",
+        "installPath": "/Users/vincentc9002/.claude/plugins/cache/headroom-marketplace/headroom/0.37.0",
+        "version": "0.37.0",
+        "installedAt": "2026-08-12T18:34:34.479Z",
+        "lastUpdated": "2026-08-30T03:22:16.703Z",
+        "gitCommitSha": "edcdf660a7d33e019779a248448fa41fb6f69f7e"
+      },
+      {
+        "scope": "user",
+        "installPath": "/Users/vincentc9002/.claude/plugins/cache/headroom-marketplace/headroom/0.37.0",
+        "version": "0.37.0",
+        "installedAt": "2026-08-12T18:50:30.209Z",
+        "lastUpdated": "2026-08-30T03:22:11.989Z",
+        "gitCommitSha": "edcdf660a7d33e019779a248448fa41fb6f69f7e"
+      }
+    ],
+    "superpowers@claude-plugins-official": [
+      {
+        "scope": "user",
+        "installPath": "/Users/vincentc9002/.claude/plugins/cache/claude-plugins-official/superpowers/6.3.0",
+        "version": "6.3.0",
+        "installedAt": "2026-08-24T21:14:18.978Z",
+        "lastUpdated": "2026-08-24T21:14:18.978Z",
+        "gitCommitSha": "b36e0829c6d0140e93cfef2ca599b1b07d4a7797"
+      }
+    ],
+    "rust-analyzer-lsp@claude-plugins-official": [
+      {
+        "scope": "user",
+        "installPath": "/Users/vincentc9002/.claude/plugins/cache/claude-plugins-official/rust-analyzer-lsp/1.0.0",
+        "version": "1.0.0",
+        "installedAt": "2026-09-16T07:43:37.322Z",
+        "lastUpdated": "2026-09-16T07:43:37.322Z"
+      }
+    ]
+  }
+}

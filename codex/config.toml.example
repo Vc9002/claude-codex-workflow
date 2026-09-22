@@ -1,0 +1,410 @@
+approvals_reviewer = "auto_review"
+model = "gpt-6-astra"
+model_reasoning_effort = "low"
+notify = ["$HOME/.codex/computer-use/Codex Computer Use.app/Contents/SharedSupport/SkyComputerUseClient.app/Contents/MacOS/SkyComputerUseClient", "turn-ended"]
+personality = "pragmatic"
+service_tier = "default"
+
+[desktop]
+  ambient-suggestions-enabled = true
+  codeFontSize = 13
+  conversationDetailMode = "STEPS_PROSE"
+  dock-icon-preference = "codex-system"
+  followUpQueueMode = "queue"
+  sansFontSize = 14
+
+[features]
+hooks = true
+  js_repl = false
+  memories = true
+
+[marketplaces]
+
+[marketplaces.openai-bundled]
+source_type = "local"
+source = "$HOME/.codex/.tmp/bundled-marketplaces/openai-bundled"
+
+[marketplaces.openai-primary-runtime]
+source_type = "local"
+source = "$HOME/.cache/codex-runtimes/codex-primary-runtime/plugins/openai-primary-runtime"
+  [marketplaces.vincent-local]
+    source = "$HOME"
+    source_type = "local"
+
+[marketplaces.claude-mem-local]
+source_type = "local"
+source = "$HOME/.claude/plugins/marketplaces/thedotmack"
+
+[mcp_servers]
+  [mcp_servers.node_repl]
+    args = []
+    command = "/Applications/ChatGPT.app/Contents/Resources/cua_node/bin/node_repl"
+    startup_timeout_sec = 120
+    [mcp_servers.node_repl.env]
+      NODE_REPL_NATIVE_PIPE_CONNECT_TIMEOUT_MS = "1000"
+      NODE_REPL_NODE_MODULE_DIRS = "/Applications/ChatGPT.app/Contents/Resources/cua_node/lib/node_modules"
+      NODE_REPL_NODE_PATH = "/Applications/ChatGPT.app/Contents/Resources/cua_node/bin/node"
+      NODE_REPL_TRUSTED_CODE_PATHS = "$HOME/.codex:/Applications/ChatGPT.app/Contents/Resources/cua_node/lib/node_modules"
+      CODEX_HOME = "$HOME/.codex"
+      BROWSER_USE_AVAILABLE_BACKENDS = "chrome,iab"
+BROWSER_USE_TINYSKY_ENABLED = "1"
+NODE_REPL_INSTRUCTIONS_USE_CASE_BROWSER = ""
+      NODE_REPL_INSTRUCTIONS_USE_CASE_CHROME = ""
+NODE_REPL_INSTRUCTIONS_USE_CASE_COMPUTER_USE = ""
+      BROWSER_USE_CODEX_APP_BUILD_FLAVOR = "prod"
+      BROWSER_USE_CODEX_APP_VERSION = "26.915.31945"
+NODE_REPL_TRUSTED_SERVICES = '{"browser":"$HOME/.codex/plugins/cache/openai-bundled/browser/26.915.31945/scripts/browser-service.mjs","sky":"@oai/sky/service"}'
+SKY_CUA_SERVICE_PATH = "$HOME/.codex/computer-use/Codex Computer Use.app"
+      CODEX_CLI_PATH = "/Applications/ChatGPT.app/Contents/Resources/codex"
+  [mcp_servers.openaiDeveloperDocs]
+    url = "https://developers.openai.com/mcp"
+
+[mcp_servers.computer-use]
+command = "./Codex Computer Use.app/Contents/SharedSupport/SkyComputerUseClient.app/Contents/MacOS/SkyComputerUseClient"
+args = ["mcp"]
+cwd = "."
+enabled = false
+
+[plugins]
+  [plugins."apify-mcp-server@vincent-local"]
+    enabled = false
+  [plugins."browser@openai-bundled"]
+    enabled = true
+  [plugins."build-macos-apps@openai-curated"]
+    enabled = true
+  [plugins."claude-filesystem@vincent-local"]
+    enabled = true
+  [plugins."claude-imessage@vincent-local"]
+    enabled = false
+  [plugins."claude-notes@vincent-local"]
+    enabled = false
+  [plugins."control-your-mac@vincent-local"]
+    enabled = true
+  [plugins."documents@openai-primary-runtime"]
+    enabled = true
+  [plugins."gmail@openai-curated"]
+    enabled = true
+  [plugins."google-calendar@openai-curated"]
+    enabled = true
+  [plugins."ib-recruiting@vincent-local"]
+    enabled = true
+  [plugins."notion@openai-curated"]
+    enabled = true
+  [plugins."pdf-toolkit@vincent-local"]
+    enabled = true
+  [plugins."pdf@openai-primary-runtime"]
+    enabled = true
+  [plugins."penn-academic@vincent-local"]
+    enabled = true
+  [plugins."penn-course@vincent-local"]
+    enabled = true
+  [plugins."polymarket-edge@vincent-local"]
+    enabled = true
+  [plugins."presentations@openai-primary-runtime"]
+    enabled = true
+  [plugins."spreadsheets@openai-primary-runtime"]
+    enabled = true
+  [plugins."template-creator@openai-primary-runtime"]
+    enabled = true
+  [plugins."todoist-mcp@vincent-local"]
+    enabled = true
+  [plugins."tracker-mcp@vincent-local"]
+    enabled = true
+  [plugins."visualize@openai-bundled"]
+    enabled = true
+  [plugins."writing-style@vincent-local"]
+    enabled = true
+
+[projects]
+  [projects."$HOME"]
+    trust_level = "trusted"
+  [projects."$HOME/.local/share/agent-deck/conductor/model-prediction"]
+    trust_level = "trusted"
+  [projects."$HOME/.local/share/agent-deck/conductor/model-prediction-backup"]
+    trust_level = "trusted"
+  [projects."$HOME/Documents/Codex/2026-04-27/add-using-tracker-mcp-https-app"]
+    trust_level = "trusted"
+  [projects."$HOME/Documents/Codex/2026-04-27/covert-this-to-a-html-context"]
+    trust_level = "trusted"
+  [projects."$HOME/Documents/Codex/2026-04-27/files-mentioned-by-the-user-vincentasamreflectionjournal"]
+    trust_level = "trusted"
+  [projects."$HOME/Documents/Codex/2026-04-27/fix-this"]
+    trust_level = "trusted"
+  [projects."$HOME/Documents/Codex/2026-04-27/reintegrate-all-claude-workflow-including-all"]
+    trust_level = "trusted"
+  [projects."$HOME/Documents/Codex/2026-04-27/research-my-claude-plugins-and-intergate"]
+    trust_level = "trusted"
+  [projects."$HOME/Documents/Codex/2026-04-27/search-handshake-for-new-jobs-accoridng"]
+    trust_level = "trusted"
+  [projects."$HOME/Documents/Codex/2026-04-27/what-is-codex-auto-compact-featiure"]
+    trust_level = "trusted"
+  [projects."$HOME/Documents/Codex/2026-04-28/add-to-tracker-https-app-joinhandshake"]
+    trust_level = "trusted"
+  [projects."$HOME/Documents/Codex/2026-04-28/config-var-config-applications-start-row"]
+    trust_level = "trusted"
+  [projects."$HOME/Documents/Codex/2026-04-28/map-this-out-on-a-image"]
+    trust_level = "trusted"
+  [projects."$HOME/Documents/Codex/2026-04-28/memorize-these-jobs"]
+    trust_level = "trusted"
+  [projects."$HOME/Documents/Codex/2026-04-28/open-a-youtube-video-and-play"]
+    trust_level = "trusted"
+  [projects."$HOME/Documents/Codex/2026-04-28/review-mgmt-2120-course-gradesclaude-finished"]
+    trust_level = "trusted"
+  [projects."$HOME/Documents/Codex/2026-04-28/skip-to-main-content-getting-codex"]
+    trust_level = "trusted"
+  [projects."$HOME/Documents/Codex/2026-04-28/update-agents-md-with-newly-discovered"]
+    trust_level = "trusted"
+  [projects."$HOME/Documents/Codex/2026-04-28/y"]
+    trust_level = "trusted"
+  [projects."$HOME/Documents/Codex/2026-04-29/add-to-tracker-skip-to-content"]
+    trust_level = "trusted"
+  [projects."$HOME/Documents/Codex/2026-04-29/create-a-ai-prompt-for-claude"]
+    trust_level = "trusted"
+  [projects."$HOME/Documents/Codex/2026-04-29/read-everything-in-this-claude-session"]
+    trust_level = "trusted"
+  [projects."$HOME/Documents/Codex/2026-04-29/we-brainstormed-vincent-s-rees-0471"]
+    trust_level = "trusted"
+  [projects."$HOME/Documents/Codex/2026-05-01/files-mentioned-by-the-user-who"]
+    trust_level = "trusted"
+  [projects."$HOME/Documents/Codex/2026-05-02/analyse-how-other-write-dicussions-posts"]
+    trust_level = "trusted"
+  [projects."$HOME/Documents/Codex/2026-05-02/r-u-able-to-build-a"]
+    trust_level = "trusted"
+  [projects."$HOME/Documents/Codex/2026-05-03/add-this-using-tracekr-mcp-vericor"]
+    trust_level = "trusted"
+  [projects."$HOME/Documents/Codex/2026-05-03/brian-jiang-1w-advisory-ex-pe"]
+    trust_level = "trusted"
+  [projects."$HOME/Documents/Codex/2026-05-03/create-a-skill-to-browse-claude"]
+    trust_level = "trusted"
+  [projects."$HOME/Documents/Codex/2026-05-03/how-to-make-codex-and-claude"]
+    trust_level = "trusted"
+  [projects."$HOME/Documents/Codex/2026-05-03/review-latest-claude-session"]
+    trust_level = "trusted"
+  [projects."$HOME/Documents/Codex/2026-05-03/vincent-asked-for-help-writing-all"]
+    trust_level = "trusted"
+  [projects."$HOME/Documents/Codex/2026-05-03/working-on-vincent-s-rees-0471"]
+    trust_level = "trusted"
+  [projects."$HOME/Documents/Codex/2026-05-06/r-u-able-to-help-me"]
+    trust_level = "trusted"
+  [projects."$HOME/Documents/Codex/2026-05-06/script-to-write-in-words-manually"]
+    trust_level = "trusted"
+  [projects."$HOME/Documents/Codex/2026-05-07/remove-everything-about-this-about-the"]
+    trust_level = "trusted"
+  [projects."$HOME/Documents/Codex/2026-05-08/chcek-my-resouse-manger-and-see"]
+    trust_level = "trusted"
+  [projects."$HOME/Documents/Codex/2026-05-09/add-this-via-tracker-mcp-banner"]
+    trust_level = "trusted"
+  [projects."$HOME/Documents/Codex/2026-05-09/browse-online-and-get-ideas-and"]
+    trust_level = "trusted"
+  [projects."$HOME/Documents/Codex/2026-05-09/explain-ur-workflow-on-how-to"]
+    trust_level = "trusted"
+  [projects."$HOME/Documents/Codex/2026-05-09/read-over-the-jo-citrea-file"]
+    trust_level = "trusted"
+  [projects."$HOME/Documents/Codex/2026-05-09/read-this-is-it-possible-integrate"]
+    trust_level = "trusted"
+  [projects."$HOME/Documents/Codex/2026-05-09/u-are-to-add-applcaitons-to"]
+    trust_level = "trusted"
+  [projects."$HOME/Documents/Codex/2026-05-09/update-job-citrea-for-codex-and"]
+    trust_level = "trusted"
+  [projects."$HOME/Documents/Codex/2026-05-09/what-is-this-k-k-i"]
+    trust_level = "trusted"
+  [projects."$HOME/Documents/Codex/2026-05-10/add-these-to-tracker-mcp-skip"]
+    trust_level = "trusted"
+  [projects."$HOME/Documents/Codex/2026-05-10/add-to-tracker-mcp-and-create"]
+    trust_level = "trusted"
+  [projects."$HOME/Documents/Codex/2026-05-10/handshake-daily-search-autonomously-search-handshake"]
+    trust_level = "trusted"
+  [projects."$HOME/Documents/Codex/2026-05-13/what-is-google-drive-tripping-about"]
+    trust_level = "trusted"
+  [projects."$HOME/Documents/Codex/2026-05-14/institution-logo-vc-bettercampus-dashboard-planner"]
+    trust_level = "trusted"
+  [projects."$HOME/Documents/Codex/2026-05-15/cal-gpa-if-i-get-a"]
+    trust_level = "trusted"
+  [projects."$HOME/Documents/Codex/2026-05-16/move-to-recruting-folder-and-rename"]
+    trust_level = "trusted"
+  [projects."$HOME/Documents/Codex/2026-05-16/read-these-code-just-understand-whats"]
+    trust_level = "trusted"
+  [projects."$HOME/Documents/Codex/2026-05-16/rebind-raycast-shortcut-to-be-command"]
+    trust_level = "trusted"
+  [projects."$HOME/Documents/Codex/2026-05-17/fix-claude-scheled-task-this-is"]
+    trust_level = "trusted"
+  [projects."$HOME/Documents/Codex/2026-05-17/fix-this-for-me"]
+    trust_level = "trusted"
+  [projects."$HOME/Documents/Codex/2026-05-17/import-my-resume-into-a-skill"]
+    trust_level = "trusted"
+  [projects."$HOME/Documents/Codex/2026-05-18/do-another-claude-and-codex-sync"]
+    trust_level = "trusted"
+  [projects."$HOME/Documents/Codex/2026-05-19/extrat-all-books-and-author-skip"]
+    trust_level = "trusted"
+  [projects."$HOME/Documents/Codex/2026-05-19/use-the-tracker-mcp-application-adds"]
+    trust_level = "trusted"
+  [projects."$HOME/Documents/Codex/2026-05-20/add-this-app-f3-global-logo"]
+    trust_level = "trusted"
+  [projects."$HOME/Documents/Codex/2026-05-20/files-mentioned-by-the-user-absolute"]
+    trust_level = "trusted"
+  [projects."$HOME/Documents/Codex/2026-05-20/main-apps-script-for-the-recruiting"]
+    trust_level = "trusted"
+  [projects."$HOME/Documents/Codex/2026-05-20/set-the-timer-to-60-seconds"]
+    trust_level = "trusted"
+  [projects."$HOME/Documents/Codex/2026-05-21/new-chat"]
+    trust_level = "trusted"
+  [projects."$HOME/Documents/Codex/2026-05-22/add-to-tracker-mcp-0-notifications"]
+    trust_level = "trusted"
+  [projects."$HOME/Documents/Codex/2026-05-22/beauty-coterie-logo-beauty-coterie-information"]
+    trust_level = "trusted"
+  [projects."$HOME/Documents/Codex/2026-05-23/conitnue-this-a-movie-that-has"]
+    trust_level = "trusted"
+  [projects."$HOME/Documents/Codex/2026-05-23/do-u-have-access-to-my"]
+    trust_level = "trusted"
+  [projects."$HOME/Documents/Codex/2026-05-23/google-calendar-plugin-google-calendar-openai"]
+    trust_level = "trusted"
+  [projects."$HOME/Documents/Codex/2026-05-23/revist-penn-course-mcp-test-and"]
+    trust_level = "trusted"
+  [projects."$HOME/Documents/Codex/2026-05-24/create-an-claude-pormpt-for-this"]
+    trust_level = "trusted"
+  [projects."$HOME/Documents/Codex/2026-05-24/step-up-a-claude-prompt-to"]
+    trust_level = "trusted"
+  [projects."$HOME/Documents/Codex/2026-05-24/would-it-be-able-to-quit"]
+    trust_level = "trusted"
+  [projects."$HOME/Documents/Codex/2026-05-25/after-another-5-5-cu-of"]
+    trust_level = "trusted"
+  [projects."$HOME/Documents/Codex/2026-05-25/search-my-restless-horizon-modpack-where"]
+    trust_level = "trusted"
+  [projects."$HOME/Documents/Codex/2026-05-26/files-mentioned-by-the-user-400"]
+    trust_level = "trusted"
+  [projects."$HOME/Documents/Codex/2026-05-30/add-to-tracker-mcp-get-well"]
+    trust_level = "trusted"
+  [projects."$HOME/Documents/Codex/2026-05-30/i-want-to-edit-my-resume"]
+    trust_level = "trusted"
+  [projects."$HOME/Documents/Codex/2026-05-31/what-if-wanted-to-double-major"]
+    trust_level = "trusted"
+  [projects."$HOME/Documents/Codex/2026-06-03/files-mentioned-by-the-user-pasted"]
+    trust_level = "trusted"
+  [projects."$HOME/Documents/Codex/2026-06-05/clear-my-tracker-of-all-roles"]
+    trust_level = "trusted"
+  [projects."$HOME/Documents/Codex/2026-06-07/add-to-tracker-mcp-lucinda-literary"]
+    trust_level = "trusted"
+  [projects."$HOME/Documents/Codex/2026-06-11/files-mentioned-by-the-user-codex"]
+    trust_level = "trusted"
+  [projects."$HOME/Documents/Codex/2026-06-12/read-the-project-i-have-on"]
+    trust_level = "trusted"
+  [projects."$HOME/Documents/Codex/2026-06-12/skip-to-content-vincent-chen-11"]
+    trust_level = "trusted"
+  [projects."$HOME/Documents/Codex/2026-07-02/why"]
+    trust_level = "trusted"
+  [projects."$HOME/Documents/Codex/2026-07-06/run-vincent-s-daily-betting-refresh"]
+    trust_level = "trusted"
+  [projects."$HOME/Documents/Codex/2026-07-11/yo"]
+    trust_level = "trusted"
+  [projects."$HOME/Documents/Codex/2026-07-12/flat-call"]
+    trust_level = "trusted"
+  [projects."$HOME/Documents/Codex/2026-07-13/referenced-chatgpt-conversation-this-is-untrusted"]
+    trust_level = "trusted"
+  [projects."$HOME/Documents/Codex/2026-07-17/i-want-to-scrape-this-entire"]
+    trust_level = "trusted"
+  [projects."$HOME/Documents/Codex/recruiting-tracker-state"]
+    trust_level = "trusted"
+  [projects."$HOME/Documents/Poly & Kalshi"]
+    trust_level = "trusted"
+  [projects."$HOME/Documents/Poly & Kalshi/model prediction"]
+    trust_level = "trusted"
+  [projects."$HOME/Documents/Poly & Kalshi/model prediction/.worktrees/feature-agent-dashboard-single-evidence-1722"]
+    trust_level = "trusted"
+  [projects."$HOME/Documents/Poly & Kalshi/model prediction/.worktrees/feature-agent-ledger-routing-invariant-1722"]
+    trust_level = "trusted"
+  [projects."$HOME/Documents/Poly & Kalshi/model prediction/.worktrees/feature-agent-prod-evidence-api-1722"]
+    trust_level = "trusted"
+  [projects."$HOME/Documents/Poly & Kalshi/model prediction/.worktrees/feature-agent-prod-evidence-ui-1722"]
+    trust_level = "trusted"
+  [projects."$HOME/Documents/Poly & Kalshi/model prediction/.worktrees/feature-agent-prod-feature-ablation-1722"]
+    trust_level = "trusted"
+  [projects."$HOME/Documents/Polymarket"]
+    trust_level = "trusted"
+  [projects."$HOME/Library/CloudStorage/OneDrive-PennO365/Spring 2026/PSCI 1150 - Contemporary Chinese Politics"]
+    trust_level = "trusted"
+  [projects."$HOME/model prediction/.worktrees/agent-execution-audit-current"]
+    trust_level = "trusted"
+  [projects."$HOME/model prediction/.worktrees/agent-ledger-settlement-current"]
+    trust_level = "trusted"
+  [projects."$HOME/model prediction/.worktrees/agent-pit-feature-gates-current"]
+    trust_level = "trusted"
+  [projects."$HOME/model prediction/.worktrees/feature-agent-execution-audit-1785072231"]
+    trust_level = "trusted"
+  [projects."$HOME/model prediction/.worktrees/feature-agent-execution-security-1785071984"]
+    trust_level = "trusted"
+  [projects."$HOME/model prediction/.worktrees/feature-agent-ledger-audit-1785072004"]
+    trust_level = "trusted"
+  [projects."$HOME/model prediction/.worktrees/feature-agent-ledger-settlement-1785072232"]
+    trust_level = "trusted"
+  [projects."$HOME/model prediction/.worktrees/feature-agent-pit-feature-gates-1785072233"]
+    trust_level = "trusted"
+  [projects."$HOME/model prediction/.worktrees/feature-agent-pit-gates-1785072004"]
+    trust_level = "trusted"
+
+[projects."$HOME/Documents/Codex/2026-08-05/referenced-chatgpt-conversation-this-is-an"]
+trust_level = "trusted"
+
+[projects."$HOME/Documents/Codex/2026-09-15/referenced-chatgpt-conversation-this-is-an"]
+trust_level = "trusted"
+
+[projects."$HOME/Documents/Codex/2026-09-16/referenced-chatgpt-conversation-this-is-an"]
+trust_level = "trusted"
+
+[shell_environment_policy]
+  [shell_environment_policy.set]
+    NODE_REPL_TRUSTED_BROWSER_CLIENT_SHA256S = "9230e2bd8b24b7ac7a0ba6774c64bf0d78ecdabbdd91d0ed627b02a587bae2df"
+
+[tui]
+theme = "catppuccin-latte"
+
+[tui.model_availability_nux]
+"gpt-5.6-sol" = 4
+gpt-6-astra = 4
+
+[notice]
+hide_rate_limit_model_nudge = true
+
+[hooks.state]
+
+[hooks.state."$HOME/.codex/hooks.json:pre_tool_use:0:0"]
+trusted_hash = "sha256:d61a27d0ff6ce93354045e23036cecc736f735ef46769cc70139075836ea40f7"
+
+[hooks.state."$HOME/.codex/hooks.json:session_start:0:0"]
+trusted_hash = "sha256:3a4e856ed0461512227161696da58b0f19f2b4bc936cea6e4f9042d3d31c3903"
+
+[hooks.state."claude-mem@claude-mem-local:hooks/codex-hooks.json:pre_tool_use:0:0"]
+trusted_hash = "sha256:86febee762af4f8108e7881061dcfb56c83e0dce5895fb0de92401357b847d6f"
+
+[hooks.state."claude-mem@claude-mem-local:hooks/codex-hooks.json:post_tool_use:0:0"]
+trusted_hash = "sha256:3a42cc9271ee65328dde3a9afe2199416194644c8467687107d621e0b84dd0ce"
+
+[hooks.state."claude-mem@claude-mem-local:hooks/codex-hooks.json:session_start:0:0"]
+trusted_hash = "sha256:f357ffb058c757e253139dca78300aa18d983f210902d2a0eeb1438b54320c82"
+
+[hooks.state."claude-mem@claude-mem-local:hooks/codex-hooks.json:user_prompt_submit:0:0"]
+trusted_hash = "sha256:26a7a750d7a3cfde4d4d6c3b3887d597fc50a322273979d13a81c3547458bbf7"
+
+[hooks.state."claude-mem@claude-mem-local:hooks/codex-hooks.json:stop:0:0"]
+trusted_hash = "sha256:bc8fcabc7e0a38d90e26757207c40907b8b6e967256e6eb74f8f49f9cc4c4bf1"
+
+[hooks.state."browser@openai-bundled:plugin.json#hooks[0]:stop:0:0"]
+trusted_hash = "sha256:317a07045dfc95aef2e80c55428a2f817e2768be867e3b1ef29a73da8636ae7f"
+
+[plugins."claude-mem@thedotmack"]
+enabled = false
+
+[plugins."claude-mem@claude-mem-local"]
+enabled = true
+
+[plugins."codex-app-tools@openai-bundled"]
+enabled = true
+
+[plugins."unified-computer-use@openai-bundled"]
+enabled = true
+
+[plugins."computer-use@openai-bundled"]
+enabled = true
+
+[mcp_servers.cmem]
+url = "https://cmem.ai/api/mcp"
+http_headers = { Authorization = "Bearer cm_pro_85a01830ddea87ea8020a9506c1744e8" }
