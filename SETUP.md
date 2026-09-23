@@ -40,8 +40,7 @@ These are either machine-specific or would overwrite local state:
   rather than copying it wholesale.
 - **`claude/plugins/installed_plugins.json`** — reference list of what's installed
   here. `install.sh` already runs the equivalent `claude plugin marketplace add` /
-  `claude plugin install` commands for the three third-party marketplaces
-  (`claude-plugins-official`, `thedotmack/claude-mem`, `chopratejas/headroom`).
+  `claude plugin install` commands for the official plugins and Headroom marketplace.
 - **MCP servers, OAuth, API keys** — none of this is in the repo. Re-authenticate
   MCP servers (Gmail, Notion, Todoist, etc.) and re-add any API keys locally.
 - **GSD core** (`gsd-core/`, `.gsd-*` files) — this is a plugin-managed installation

@@ -7,15 +7,6 @@
     "installLocation": "/Users/vincentc9002/.claude/plugins/marketplaces/claude-plugins-official",
     "lastUpdated": "2026-09-22T00:22:09.537Z"
   },
-  "thedotmack": {
-    "source": {
-      "source": "github",
-      "repo": "thedotmack/claude-mem"
-    },
-    "installLocation": "/Users/vincentc9002/.claude/plugins/marketplaces/thedotmack",
-    "lastUpdated": "2026-09-22T00:22:22.000Z",
-    "autoUpdate": true
-  },
   "headroom-marketplace": {
     "source": {
       "source": "github",

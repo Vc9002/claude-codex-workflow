@@ -43,12 +43,10 @@ echo
 echo "== Claude Code plugins/marketplaces =="
 if command -v claude >/dev/null 2>&1; then
   claude plugin marketplace add anthropics/claude-plugins-official || true
-  claude plugin marketplace add thedotmack/claude-mem || true
   claude plugin marketplace add chopratejas/headroom || true
   claude plugin install frontend-design@claude-plugins-official || true
   claude plugin install superpowers@claude-plugins-official || true
   claude plugin install rust-analyzer-lsp@claude-plugins-official || true
-  claude plugin install claude-mem@thedotmack || true
   claude plugin install headroom@headroom-marketplace || true
 else
   echo "claude CLI not found on PATH — install Claude Code first, then re-run this section:"

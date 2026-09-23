@@ -11,20 +11,9 @@
         "gitCommitSha": "c447c3207a425bc4e2a0d068435f64b0477ae981"
       }
     ],
-    "claude-mem@thedotmack": [
-      {
-        "scope": "user",
-        "installPath": "/Users/vincentc9002/.claude/plugins/cache/thedotmack/claude-mem/13.25.3",
-        "version": "13.25.3",
-        "installedAt": "2026-08-25T02:56:18.295Z",
-        "lastUpdated": "2026-09-22T00:22:22.151Z",
-        "gitCommitSha": "4520de9e0f8d6cdc20597520e383d8b51d93137f"
-      }
-    ],
     "headroom@headroom-marketplace": [
       {
         "scope": "local",
-        "projectPath": "/Users/vincentc9002/.claude/plugins/cache/thedotmack/claude-mem/13.15.0",
         "installPath": "/Users/vincentc9002/.claude/plugins/cache/headroom-marketplace/headroom/0.37.0",
         "version": "0.37.0",
         "installedAt": "2026-08-12T18:34:34.479Z",
