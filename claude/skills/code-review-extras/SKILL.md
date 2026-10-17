@@ -1,6 +1,7 @@
 ---
 name: code-review-extras
-description: Companion to the read-only `code-review` plugin skill (this file carries only the delta). Three additions for parallel-review and removed-behavior passes: cluster finder candidates by (file, line, mechanism) before spending verification budget; when a diff splits validate from persist, answer the four state-boundary questions; and scheduler+observer pairs must share the observed API's locality convention.
+description: >-
+  Companion to the read-only `code-review` plugin skill (this file carries only the delta). Three additions for parallel-review and removed-behavior passes: cluster finder candidates by (file, line, mechanism) before spending verification budget; when a diff splits validate from persist, answer the four state-boundary questions; and scheduler+observer pairs must share the observed API's locality convention.
 ---
 
 # Code Review Extras (delta companion to the `code-review` skill)

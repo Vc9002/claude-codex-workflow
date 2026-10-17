@@ -41,7 +41,11 @@
 - You'll review & apply this selectively on the new machine
 - Marked `.example` so it won't overwrite local customizations
 
-### Codex CLI (`~/.codex/`)
+**Claude Desktop MCP Template** (`claude/desktop/claude_desktop_config.json.example`)
+- Separate from Claude Code settings and used by the Claude Desktop app
+- Starts empty because no Claude Desktop MCP config was present on this machine
+
+### Codex Desktop + CLI (`~/.codex/`)
 
 **Skills** (`codex/skills/`)
 - Shared with Claude (symlinked/synced)
@@ -52,8 +56,9 @@
 - Defines Codex-specific automation
 
 **Config Template** (`codex/config.toml.example`)
-- Codex configuration with `$HOME` placeholders
-- Marked `.example` for safe merging
+- Portable UI preferences, enabled built-in plugins, and OpenAI Developer Docs MCP
+- Applies to both Codex desktop and Codex CLI, which share `~/.codex/config.toml`
+- Leaves runtime paths, trusted project paths, local MCP processes, and secrets out
 
 ### Setup Automation
 
@@ -99,6 +104,12 @@
 **`~/.codex/auth.json`** (Codex auth token)
 - Per-machine, secret — regenerated on `codex login`
 
+**`~/.codex/config.toml` local-only sections**
+- MCP commands with machine-specific executable paths or credentials
+- Project trust decisions and generated hook/plugin state
+- Shareable preferences and built-in plugin selections are represented in
+  `codex/config.toml.example` instead
+
 **`~/.codex/.tmp/`, session archives**
 - Ephemeral runtime files
 - Not needed
@@ -122,12 +133,16 @@
    ```bash
    ./install.sh
    ```
-   This symlinks all skills, agents, commands, hooks into `~/.claude` and `~/.codex`.
+   This symlinks shared Claude Code and Codex workflow files into their config
+   folders. Codex desktop uses the same `~/.codex` settings as the CLI.
 
 3. **Review & apply settings:**
    - Check `claude/settings.json.example` for environment variables and permission allowlists
    - Merge relevant lines into `~/.claude/settings.json` (or `settings.local.json` for machine-specific overrides)
-   - Same for `codex/config.toml.example` → `~/.codex/config.toml`
+   - Merge `codex/config.toml.example` into `~/.codex/config.toml` for both Codex
+     desktop and CLI
+   - Merge `claude/desktop/claude_desktop_config.json.example` into Claude
+     Desktop's `claude_desktop_config.json` if you use that app
 
 4. **Login:**
    ```bash
@@ -160,11 +175,17 @@ See `SETUP.md` for the full customization walkthrough.
 
 ## 🔐 Security Checklist
 
-- ✅ No API keys in the repo
+- ✅ No API keys in the current config templates
 - ✅ No auth tokens
 - ✅ No personal data (email, domain names, real file paths)
 - ✅ All user-specific paths replaced with `$HOME`
-- ✅ Safe to make this repo public
+- ⚠️ Review Git history before publishing or sharing this repository
+
+**Before sharing:** a credential had previously been committed in
+`codex/config.toml.example`. It is removed from the current file, but remains in
+Git history. Revoke and replace that MCP credential, then remove it from history
+before sharing the repo; deleting it from the latest version does not remove it
+from earlier commits.
 
 ---
 
@@ -179,7 +200,8 @@ See `SETUP.md` for the full customization walkthrough.
 │
 ├── claude/
 │   ├── CLAUDE.md                  # Global instructions
-│   ├── settings.json.example      # Settings template (with $HOME placeholders)
+│   ├── settings.json.example      # Claude Code settings template
+    desktop/                   # Claude Desktop MCP config template
 │   ├── skills/                    # 170+ skills
 │   ├── agents/                    # Custom subagents
 │   ├── commands/                  # Slash commands
@@ -188,7 +210,7 @@ See `SETUP.md` for the full customization walkthrough.
 │
 └── codex/
     ├── AGENTS.md                  # Codex global instructions
-    ├── config.toml.example        # Config template (with $HOME placeholders)
+    ├── config.toml.example        # Portable Codex desktop + CLI settings
     └── skills/                    # Shared with Claude
 ```
 

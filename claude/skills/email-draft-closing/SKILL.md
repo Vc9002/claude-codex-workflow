@@ -7,14 +7,19 @@ description: Use whenever drafting, revising, or saving an email for Vincent, in
 
 When drafting or revising any email for Vincent:
 
-- End with an appropriate closing only, usually `Best,`.
-- Do not add `Vincent`, `Vincent Chen`, contact information, school information, or any other signature block.
-- Do not duplicate a signature already present in an existing draft.
-- Assume Vincent's email client automatically inserts his configured signature.
+- End the authored message with exactly `Best,` followed on the next line by `Vincent`.
+- Keep the email client's configured automatic signature beneath that closing. Do not remove or replace it.
+- Leave a blank line between `Vincent` and the automatic signature.
+- Do not manually recreate the automatic signature or add another signature block.
+- Before saving, inspect the rendered draft to confirm the closing and automatic signature are both present, with no duplicate automatic signature.
 
 Example ending:
 
 ```text
 Best,
-```
+Vincent
 
+--
+Vincent Chen
+[rest of automatic signature]
+```

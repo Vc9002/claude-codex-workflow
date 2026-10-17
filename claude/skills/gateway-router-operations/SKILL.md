@@ -1,6 +1,7 @@
 ---
 name: gateway-router-operations
-description: Internal — pre-flight checks before trusting an LLM gateway/router for interactive work: resilience is bounded by per-provider account count (1 account = zero fallback), auto-routing is only as good as its candidate pool, and virtual model names must be mapped in the client so context-window limits aren't misassumed. Use when configuring or debugging a model-router/gateway setup.
+description: >-
+  Internal — pre-flight checks before trusting an LLM gateway/router for interactive work: resilience is bounded by per-provider account count (1 account = zero fallback), auto-routing is only as good as its candidate pool, and virtual model names must be mapped in the client so context-window limits aren't misassumed. Use when configuring or debugging a model-router/gateway setup.
 ---
 
 # Gateway Router Operations (internal)

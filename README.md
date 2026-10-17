@@ -1,16 +1,18 @@
 # claude-codex-workflow
 
-Personal workflow — skills, subagents, slash commands, hooks, and global
-instructions — for [Claude Code](https://claude.com/claude-code) and the
-[OpenAI Codex CLI](https://github.com/openai/codex). Designed to be cloned
-onto a new machine and applied with one script; see [SETUP.md](SETUP.md).
+Portable workflow settings for Claude Desktop, Claude Code, the Codex desktop
+app, and Codex CLI. It includes skills, instructions, hooks, plugins, and safe
+configuration templates. See [SETUP.md](SETUP.md) before applying settings on a
+new machine.
 
 ## Layout
 
 ```
 claude/
   CLAUDE.md                  global instructions (~/.claude/CLAUDE.md)
-  settings.json.example      settings/hooks/permissions reference (~/.claude/settings.json)
+  settings.json.example      Claude Code settings/hooks/permissions template
+  desktop/
+    claude_desktop_config.json.example  Claude Desktop MCP config template
   skills/                    skills (~/.claude/skills)
   agents/                    subagents (~/.claude/agents)
   commands/                  slash commands (~/.claude/commands)
@@ -18,7 +20,7 @@ claude/
   plugins/                   installed_plugins.json / known_marketplaces.json reference
 codex/
   AGENTS.md                  global instructions (~/.codex/AGENTS.md)
-  config.toml.example        config reference (~/.codex/config.toml) — machine-specific, merge manually
+  config.toml.example        Codex desktop + CLI preferences/MCP/plugin template
   skills/                    skills (~/.codex/skills)
 install.sh                   symlinks the above into place on a new machine
 SETUP.md                     step-by-step setup, including what NOT to blindly copy
@@ -38,7 +40,7 @@ keys) that are intentionally left out of automatic sync.
 
 ## What's excluded
 
-Session history, caches, auth tokens/OAuth state, daemon logs, and other
-machine-local runtime state are not tracked here — only the parts of the
-workflow that define *behavior* (skills, agents, commands, hooks, global
-instructions, plugin list).
+Session history, caches, auth tokens/OAuth state, daemon logs, project trust
+decisions, and machine-specific MCP commands are not tracked. Codex desktop and
+CLI share `~/.codex/config.toml`; Claude Desktop has its own MCP config file.
+See `SETUP.md` for which files apply to each app and how to merge them safely.

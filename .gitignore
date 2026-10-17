@@ -1,0 +1,17 @@
+# Local application configs may contain credentials or machine-specific paths.
+/claude/settings.json
+/claude/desktop/claude_desktop_config.json
+/codex/config.toml
+/codex/hooks.json
+
+# Never track exported credentials or runtime state.
+**/.env
+**/.env.*
+**/auth.json
+**/.credentials.json
+**/history.jsonl
+**/sessions/
+
+# Python cache
+**/__pycache__/
+*.py[cod]
