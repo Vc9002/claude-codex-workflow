@@ -1,6 +1,6 @@
 ---
 name: service-debugging-env-replication
-description: Debugging or verifying a service that runs under a scheduler (launchd, systemd, cron) — replicate the scheduler's real environment for live diagnostics, never for the test suite unless its docs say to, and verify a job actually did its work (concrete before/after state diff) rather than trusting a status query or exit code. Use whenever investigating a scheduled/background job's behavior.
+description: Debugging or verifying a service that runs under a scheduler (launchd, systemd, cron, Windows Task Scheduler) — replicate the scheduler's real environment for live diagnostics, never for the test suite unless its docs say to, and verify a job actually did its work (concrete before/after state diff) rather than trusting a status query or exit code. Use whenever investigating a scheduled/background job's behavior.
 ---
 
 # Service Debugging via Environment Replication
